@@ -1,0 +1,34 @@
+@import "variables"
+@import "mixins"
+@import "../node_modules/bulma/sass/utilities/_all"
+
+.ContactSection
+  @include double-vertical-padding
+  @include horizontal-padding
+  background: $contact-background-color linear-gradient(145deg, $contact-background-color, lighten($contact-background-color, 5%))
+
+  .title
+    color: findColorInvert($contact-background-color)
+
+    & > .separator
+      border-color: $primary
+
+  .ContactSection-TextWrapper
+    font-family: $family-secondary
+    letter-spacing: 1px
+    padding-top: 6rem
+    padding-bottom: 6rem
+
+    .name, .cv
+      font-size: 1.5rem
+
+    .email
+      font-weight: 900
+      font-size: 7vw
+
+      @include from($semi-tablet)
+        font-size: 2rem
+
+
+    .cv
+      margin-top: 1rem

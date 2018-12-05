@@ -1,0 +1,36 @@
+@import "variables"
+@import "mixins"
+@import "../node_modules/bulma/sass/utilities/_all"
+
+#TechnologiesSection
+  @include double-vertical-padding
+  @include horizontal-padding
+  background: $technologies-background-color linear-gradient(240deg, darken($technologies-background-color, 4%), $technologies-background-color)
+
+
+
+
+  & .title
+    @include title-margin
+
+    color: findColorInvert($technologies-background-color)
+    //background-image: -webkit-linear-gradient(92deg,#f35626, #00f5fe)
+    //-webkit-background-clip: text
+    //-webkit-text-fill-color: transparent
+    //-webkit-animation: hue 60s infinite linear
+
+
+  .TechnologiesSection-List
+    flex-wrap: wrap
+    justify-content: center
+
+    .image
+      height: 52px
+      width: 52px
+
+    @include from($semi-tablet)
+      .image
+        height: 64px
+        width: 64px
+
+

@@ -1,0 +1,82 @@
+@import "variables"
+@import "mixins"
+@import "../node_modules/bulma/sass/utilities/_all"
+
+
+.AboutSection
+  @include unselectable
+  @include horizontal-padding
+  @include double-vertical-padding
+  background: $about-background-color
+  display: flex
+  flex-direction: column
+  justify-content: center
+  width: 100%
+
+  .logo
+    position: fixed
+    top: 16px
+    left: 16px
+    height: 32px
+    width: 32px
+    opacity: .1
+
+    @include mobile
+      position: absolute
+      top: 32px
+      left: 32px
+
+  @include tablet
+    padding-left: $gap * .75
+    padding-right: $gap  * .75
+
+  .AboutSection-ImageWrapper
+    @include half-vertical-margin
+    margin-top: 0
+
+    @include tablet-only
+      @media screen and (max-height: 800px)
+        display: none !important
+
+    @include from($tablet)
+      @media screen and (max-height: 720px)
+        display: none !important
+
+  .AboutSection-TextWrapper
+    flex-direction: column
+
+    .title
+      margin-bottom: 2rem
+      text-align: center
+      font-size: 1.3rem
+      text-transform: uppercase
+      line-height: 1.75
+
+    .subtitle
+      margin-top: 0
+
+  .AboutSection-LinksWrapper
+    @include half-vertical-margin
+    margin-bottom: 0
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .title
+      margin-bottom: 1rem
+
+  @include mobile
+    .AboutSection-TextWrapper
+      display: flex
+      justify-content: center
+
+      .AboutSection-Text
+        justify-self: center
+        max-width: 400px
+
+  @include from($tablet)
+    width: calc(5/12 * 100%)
+    height: 100vh
+    position: fixed
+    top: 0
+

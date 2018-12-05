@@ -1,0 +1,57 @@
+@mixin small-margin($direction)
+  @if $direction == 'bottom'
+    margin-bottom: $gap
+
+$semi-tablet: 480px
+
+=semi-tablet-only
+  @media screen and (min-width: 480px) and (max-width: $tablet - 1px)
+    @content
+
+
+
+=horizontal-padding
+  padding-left: $gap / 4
+  padding-right: $gap /4
+
+  @include semi-tablet-only
+    padding-left: 15vw
+    padding-right: 15vw
+
+  @include tablet
+    padding-left: $gap
+    padding-right: $gap
+
+  @include from($desktop)
+    padding-left: $gap * 2
+    padding-right: $gap * 2
+
+
+=double-vertical-padding
+  padding-top: $gap * 2
+  padding-bottom: $gap * 2
+
+=double-vertical-margin
+  margin-top: $gap * 2
+  margin-bottom: $gap * 2
+
+=vertical-margin
+  margin-top: $gap
+  margin-bottom: $gap
+
+=half-vertical-margin
+  margin-top: $gap
+  margin-bottom: $gap
+
+=half-vertical-padding
+  padding-top: $gap
+  padding-bottom: $gap
+
+=shadow
+  box-shadow: $box-shadow
+
+=title-margin
+  @include vertical-margin
+  margin-top: 0
+
+

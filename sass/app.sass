@@ -1,0 +1,36 @@
+@charset "utf-8"
+
+@import "variables"
+@import "mixins"
+@import "../node_modules/bulma/bulma.sass"
+@import "elements"
+@import "animations"
+
+.has-text-accent
+  color: $accent
+
+.has-background-accent
+  background-color: $accent
+
+
+$properties: padding margin
+$orientations: "" "-vertical" "-horizontal"
+$values: (1: null, 2: '-double' )
+
+@each $property in $properties
+  @each $orientation in $orientations
+    @each $value, $verb in $values
+      .has#{$orientation}#{$verb}-#{$property}
+        @if $orientation == '-horizontal'
+          @include mobile
+            #{$property}-left: $gap * $value / 8 !important
+            #{$property}-right: $gap * $value / 8 !important
+
+        @else if $orientation == '-vertical'
+          @include mobile
+            #{$property}-top: $gap * $value / 8 !important
+            #{$property}-bottom: $gap * $value / 8 !important
+
+        @else
+          @include mobile
+            #{$property}: $gap * $value / 8 !important

@@ -1,0 +1,53 @@
+@import "variables"
+@import "mixins"
+@import "../node_modules/bulma/sass/utilities/_all"
+
+.ProjectsSection
+  @include double-vertical-padding
+  padding-bottom: 0
+
+  .title
+    @include title-margin
+    color: findColorInvert(blue)
+
+  .ProjectsSectionElement
+    .ProjectsSectionElement-ImageWrapper
+      @include double-vertical-padding
+      padding-bottom: 0
+      display: flex
+      justify-content: center
+      align-content: center
+
+      .ProjectsSectionElement-Image
+        width: 90vw
+        height: auto
+
+        -webkit-filter: drop-shadow(6px 20px 15px rgba(0, 0, 0, .4))
+        filter: drop-shadow(6px 20px 15px rgba(0, 0, 0, .4))
+
+
+    .ProjectsSectionElement-TextWrapper
+      @include horizontal-padding
+      //@include double-vertical-padding
+      padding-top: 0
+      text-align: center
+
+      .title
+        @include half-vertical-margin
+        font-weight: 300
+
+      .ProjectsSectionElement-Stack
+        @include half-vertical-padding
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: center
+
+        .image
+          height: 52px
+          width: 52px
+
+        @include from($semi-tablet)
+          .image
+            height: 64px
+            width: 64px
+

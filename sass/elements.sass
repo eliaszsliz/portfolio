@@ -1,0 +1,46 @@
+@import "../node_modules/bulma/sass/utilities/_all"
+@import "variables"
+@import "mixins"
+
+.box
+  padding: $gap * 1
+
+.title
+  font-family: $family-secondary
+  letter-spacing: 1px
+  word-spacing: 2px
+
+  .separator
+    border-bottom: 5px solid $accent
+
+  &.is-1
+    font-size: 12vw
+
+    @include semi-tablet-only
+      font-size: 2.5rem
+
+    @include from($tablet)
+      font-size: 3rem
+
+.subtitle
+  line-height: 1.5
+  font-size: 1.2rem
+  letter-spacing: 1.1px
+
+.button.is-primary
+  background: $primary linear-gradient(120deg, $primary, lighten($primary, 3%), $primary)
+
+.button.is-medium
+  padding-left: 2.5rem
+  padding-right: 2.5rem
+
+.button
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0)
+  transition-duration: 0.3s
+
+  &:hover, &:focus, &:active
+    transform: scale(1.05)
+    box-shadow: $box-shadow
+
+
+
