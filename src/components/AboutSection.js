@@ -5,22 +5,10 @@ import '../../sass/AboutSection.sass'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-
+import {withPrefix} from "../../.cache/gatsby-browser-entry";
 
 export default ({ text, imageSrc }) => (
     <div className='AboutSection'>
-            <ScrollAnimation
-                   animateOut='fadeOut'
-                   initiallyVisible={true}
-                   delay={0}
-               >
-                <img
-                    src="/images/logo.svg"
-                    alt=""
-                    className='logo'
-                />
-            </ScrollAnimation>
-
             <div className='is-flex AboutSection-ImageWrapper'
                  style={{
                      justifyContent: 'center',

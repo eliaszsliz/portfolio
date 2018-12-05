@@ -17,7 +17,7 @@ const ContactSection = ({ email, name }) => (
                    animateIn='swing'
                    animateOnce={true}
                    initiallyVisible={true}
-                   delay={1200}
+                   delay={2000}
                >
                    <figure className='image is-64x64'>
                        <img src={withPrefix('/icons/mail.svg')} alt="Mail icon"/>
