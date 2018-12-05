@@ -8,15 +8,16 @@ import ProjectsSection from '../components/ProjectsSection'
 import ContactSection from '../components/ContactSection'
 import Footer from '../components/Footer'
 
-import data from '../data';
+import xdata from '../data';
 
 import '../../sass/app.sass';
 
 const locale = 'pl';
-const technologies = data[locale].TECHNOLOGIES;
-const projects = data[locale].PROJECTS;
-const contact = data[locale].CONTACT;
-const info = data[locale].INFORMATIONS;
+const technologies = xdata[locale].TECHNOLOGIES;
+const projects = xdata[locale].PROJECTS;
+const contact = xdata[locale].CONTACT;
+const info = xdata[locale].INFORMATIONS;
+
 
 const IndexPage = () => (
   <>

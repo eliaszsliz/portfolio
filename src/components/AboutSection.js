@@ -2,7 +2,12 @@ import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll';
 import '../../sass/AboutSection.sass'
 
-const AboutSection = ({ text, imageSrc }) => (
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+
+
+export default ({ text, imageSrc }) => (
     <div className='AboutSection'>
             <ScrollAnimation
                    animateOut='fadeOut'
@@ -21,7 +26,7 @@ const AboutSection = ({ text, imageSrc }) => (
                      justifyContent: 'center',
                  }}>
                 <figure className="image is-192x192">
-                    <img className="is-rounded" src={imageSrc} />
+                    <AboutSectionImage />
                 </figure>
             </div>
 
@@ -42,4 +47,21 @@ const AboutSection = ({ text, imageSrc }) => (
     </div>
 )
 
-export default AboutSection
+const AboutSectionImage = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        placeholderImage: file(relativePath: { eq: "mojatwarz.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Img
+        fluid={data.placeholderImage.childImageSharp.fluid}
+    />}
+  />
+)

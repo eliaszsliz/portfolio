@@ -22,7 +22,7 @@ const NotFoundPage = () => (
       <h1 style={{
           fontSize: '13vh'
       }} className='has-text-primary'>404</h1>
-      <p>Podana strona nie istnieje 😢</p>
+      <p>Podana strona nie istnieje <span className='img' aria-label='sad-emoji'>😢</span></p>
 
       <a href="/">Napraw</a>
   </div>
