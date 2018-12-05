@@ -1,6 +1,6 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll';
-const SITE_BACKGROUND_COLOR = 'rgba(255, 255, 255, 1)'
+import { withPrefix } from 'gatsby'
 
 const ProjectsSectionElement = ({
                                     title, items, color, textColor, images, bgColor, description,
@@ -22,7 +22,7 @@ const ProjectsSectionElement = ({
                 >
                     <figure className="image">
                         <img
-                            src={item.iconUrl}
+                            src={withPrefix(item.iconUrl)}
                             alt={`${item.name} icon`}
                         />
                     </figure>

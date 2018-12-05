@@ -4,30 +4,12 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import '../../sass/ProjectsSection.sass'
 import ProjectsSectionElement from '../components/ProjectsSectionElement'
 
-const ProjectsSection = ({items}) => {
-    const studia = Object.assign({},
-        items[0],
-        { thumbnail: (
-            <img
-                src={items[0].images[1]}
-                className='ProjectsSectionElement-Image'
-                alt="Studia mockup on ipad"
-                style={{ maxWidth: '250px' }}
-            />
-            )
-        })
+import ZagorzImage from './Projects/ZagorzImage'
+import StudiaImage from './Projects/StudiaImage'
 
-    const zagorz = Object.assign({},
-        items[1],
-        { thumbnail: (
-                <img
-                    src={items[1].images[0]}
-                    className='ProjectsSectionElement-Image'
-                    alt="Zagórz mocukp on desktop"
-                    style={{ maxWidth: '400px' }}
-                />
-            )
-        })
+const ProjectsSection = ({items}) => {
+    const studia = items[0]
+    const zagorz = items[1]
 
     return (
         <div
@@ -44,13 +26,17 @@ const ProjectsSection = ({items}) => {
                 </h1>
             </ScrollAnimation>
 
-            <ProjectsSectionElement {...studia} />
+            <ProjectsSectionElement
+                {...studia}
+                thumbnail={<StudiaImage/>}
+            />
 
-            <ProjectsSectionElement {...zagorz} />
+            <ProjectsSectionElement
+                {...zagorz}
+                thumbnail={<ZagorzImage />}
+            />
         </div>
     )
-
 }
-
 
 export default ProjectsSection

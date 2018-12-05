@@ -2,6 +2,7 @@ import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import '../../sass/TechnologiesSection.sass'
+import {withPrefix} from "gatsby";
 
 const TechnologiesSection = ({items}) => {
     function renderItem(item, index) {
@@ -19,7 +20,7 @@ const TechnologiesSection = ({items}) => {
                 >
                     <figure className="image">
                         <img
-                            src={item.thumbnailUrl}
+                            src={withPrefix(item.thumbnailUrl)}
                             alt={`${item.name} icon`}
                         />
                     </figure>

@@ -110,9 +110,9 @@ Studia Pigoniana z możliwością wyszukiwania.
     sourceUrl: 'https://gitlab.com/chrumczak/studia-pigoniana',
     demoUrl: 'http://193.33.111.200:8030',
     images: [
-      '/images/screens/studia/studia-iphone.png',
-      '/images/screens/studia/studia-ipad.png',
-      '/images/screens/studia/studia-ipad-3.png',
+      'screens/studia/studia-iphone.png',
+      'screens/studia/studia-ipad.png',
+      'screens/studia/studia-ipad-3.png',
     ],
     technologiesStack: [
       { name: ALL_TECHNOLOGIES.vue.name,
@@ -150,10 +150,10 @@ Wszystko zamknięte zostało w kontenerze Dockera.
       textColor: '#f6fff7',
     thumbnailUrl: '/images/screens/zagorz/zagorz-macpro.png',
     images: [
-      '/images/screens/zagorz/zagorz-macpro.png',
-      '/images/screens/zagorz/zagorz-ipad.png',
-      '/images/screens/zagorz/zagorz-ipad-2.png',
-      '/images/screens/zagorz/zagorz-ipad-3.png',
+      'screens/zagorz/zagorz-macpro.png',
+      'screens/zagorz/zagorz-ipad.png',
+      'screens/zagorz/zagorz-ipad-2.png',
+      'screens/zagorz/zagorz-ipad-3.png',
     ],
     sourceUrl: null,
     demoUrl: 'http://193.33.111.200:8015/',

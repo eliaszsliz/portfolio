@@ -2,6 +2,8 @@ import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll';
 import '../../sass/ContactSection.sass'
 
+import {withPrefix} from "../../.cache/gatsby-browser-entry";
+
 const ContactSection = ({ email, name }) => (
 
    <div className='ContactSection'>
@@ -18,7 +20,7 @@ const ContactSection = ({ email, name }) => (
                    delay={1200}
                >
                    <figure className='image is-64x64'>
-                       <img src="/icons/mail.svg" alt=""/>
+                       <img src={withPrefix('/icons/mail.svg')} alt="Mail icon"/>
                    </figure>
                </ScrollAnimation>
            </div>
@@ -39,9 +41,11 @@ const ContactSection = ({ email, name }) => (
                   style={{  marginTop: '2rem'}}
                   >
                   Zapraszam również do zapoznania się z
-                <button className='button is-primary is-medium is-rounded' style={{ marginLeft: '.5rem'}}>
+                <a  href={withPrefix('/docs/cv.pdf')} download
+                    className='button is-primary is-medium is-rounded'
+                    style={{ marginLeft: '.5rem'}}>
                     moim CV
-                </button>
+                </a>
                 </p>
            </ScrollAnimation>
        </div>
